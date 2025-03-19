@@ -6,14 +6,12 @@ using UnityEngine.UI;
 public class Tutorial : MonoBehaviour
 {
     public Animator animator;
-    public Animator panelAnim;
     public Image panel;
     // Start is called before the first frame update
     void Start()
     {
         animator.GetComponent<Animator>();
-        panelAnim.GetComponent<Animator>();
-        ChangeColor("8A8A8A");
+        ChangeColor("#8A8A8A");
         
     }
 
@@ -23,17 +21,15 @@ public class Tutorial : MonoBehaviour
         
     }
 
-    public void animationStart()
-    {
-        animator.Play("Frank");
-    }
+   
 
-      public void ChangeColor(string hexColor)
+    public void ChangeColor(string hexColor)
     {
         Color newColor;
         if (ColorUtility.TryParseHtmlString(hexColor, out newColor))
         {
             panel.color = newColor;
         }
+        
     }
 }
